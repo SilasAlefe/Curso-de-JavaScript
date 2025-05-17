@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input#bt{
+            height: 45px;
+            width: 95px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" id="bt">
+    <hr>
+    <div id="a">Clique no botão acima para iniciar</div>
+    <script>
+        var bt = window.document.querySelector('input#bt')
+        var result = window.document.querySelector('div#a')
+
+        bt.addEventListener('click', clicar)
+
+        function clicar() {
+            var metro = Number(window.prompt('Digite uma distância em metros(m)'))
+
+            result.innerHTML = (`<h2>A distância de ${metro}, corresponde a... </h2>\n
+            <p>${metro/1000} quilômetros(km) </br>
+            ${metro/100} hectômetros(Hm) </br>
+            ${metro/10} decâmetro(Dam) </br>
+            ${metro*10} decímetro(dm) </br>
+            ${metro*100} centímetro(cm) </br>
+            ${metro*1000} milímetro(mm) </br>
+            </p>`)
+        }
+    </script>
+</body>
+</html>

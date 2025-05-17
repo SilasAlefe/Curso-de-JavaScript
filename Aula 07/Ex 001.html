@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando no DOM</title>
+
+<!--    <style>
+        div{
+            color:blue
+        }
+    </style>
+-->
+</head>
+
+    
+
+
+<body>
+    <h1>Iniciando Estudos em DOM</h1>
+    <p>Aqui vai algo</p>
+    <p>Hoje estou aprendendo a usar o <strong>DOM</strong></p>
+    <div id="msg">Clique aqui</div>
+    <div class="msg">Clique aqui novamente</div>
+
+    <script>
+        /*var p1 = window.document.getElementsByTagName('p')[1]
+        
+        document.write(`O primeiro paragrafo está escrito isso: <strong>${p1.innerText}</strong>`)*/
+        
+        /*var p2 = window.document.getElementById('msg')
+        
+        document.write(`A div é: ${p2.innerText}`)
+
+        p2.style.background = 'green'*/
+
+        var p3 = window.document.querySelector('div#msg')
+        p3.style.color = 'blue'
+    </script>
+</body>
+</html>

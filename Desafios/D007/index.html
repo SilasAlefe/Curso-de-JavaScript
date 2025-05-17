@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        input#bt1{
+            height: 45px;
+            width: 95px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &rightarrow; US&dollar;</h1>
+    <input type="button" value="Converter" id="bt1">
+    <hr>
+    <p id="p1">Clique no botão acima para iniciar a conversão</p>
+
+    <script>
+        var cot = Number(window.prompt('Antes de mais nada, quanto está a cotação atual do dólar?'))
+        var bt = window.document.querySelector("input#bt1")
+        var p = window.document.querySelector("p#p1")
+
+        bt.addEventListener('click', clicar)
+
+        function clicar() {
+            var brl = Number(window.prompt('Quantos R$ você tem na carteira?'))
+
+            var result = brl/cot
+            p.innerHTML = (`
+            <h1>Convertendo ${brl}R$ em dolar resulta em...</h1>
+            <p>${result.toFixed(2)}&dollar;</p>
+                `)
+        }
+    </script>
+</body>
+</html>

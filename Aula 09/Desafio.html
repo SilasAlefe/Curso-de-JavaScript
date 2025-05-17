@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div#res{
+            margin-top: 30px;
+            background-color: rgb(233, 233, 233);
+            max-width: 427px;
+        }
+        input#clique{
+            background-color: gray;
+            color: rgb(255, 255, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <hr>
+    Digite o país que você nasceu 
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Checar" onclick="Checar()" id="clique">
+    <div id="res"><strong>Resultado</strong></div>
+    <script>
+        function Checar() {
+            var pais = ((window.document.querySelector('input#pais')).value).toUpperCase()
+            var res = window.document.querySelector('div#res')
+            //var pais2 = pais.value
+            //Aparentemente o ".value" é necessário pois sem ele a variável pais seria apenas um parametro, procedimento ou marca
+            if ((pais == "BRASIL") || (pais == "BR")){
+                res.innerHTML = ('<strong>Você é brasileiro</strong>')
+            } else {
+                res.innerHTML = ('<strong>Você é estrangeiro</strong>')
+            }
+        }
+        var clique = window.document.querySelector('input#clique')
+        clique.addEventListener('mousedown', clicar)
+        clique.addEventListener('mouseup', desclicar)
+        function clicar(){
+            clique.style.backgroundColor = 'brown'
+        }
+        function desclicar(){
+            clique.style.backgroundColor = 'gray'
+        }
+    </script>
+</body>
+</html>

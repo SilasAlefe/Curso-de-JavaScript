@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input#bt {
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    
+    <input type="button" value="Comprar Produto" id="bt">
+
+    <script>
+        var bt = window.document.querySelector('input#bt')
+        bt.addEventListener('click', clicar)
+
+        function clicar() {
+            var produto = window.prompt("Que produto você está comprando?")
+            var preco = Number(window.prompt(`Quanto custa o(a) ${produto} que você está comprando?`))
+            var valor = Number(window.prompt(`Qual foi o valor que você deu para pagar o(a) ${produto}`))
+
+            var troco = valor-preco
+
+            window.alert(`Você comprou ${produto} que custou ${preco}.\nDeu R$ ${valor} em dinheiro e vai receber R$${troco} de troco.\nVolte sempre.`)
+        }
+    </script>
+</body>
+</html>

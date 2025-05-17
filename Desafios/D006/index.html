@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input#bt{
+            height: 45px;
+            width: 95px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+
+    <input type="button" value="Converter" id="bt">
+
+    <p id="p1">Clique no botão acima para iniciar</p>
+
+    <script>
+        var bt = window.document.querySelector('input#bt')
+        var p = window.document.querySelector('p#p1')
+
+        bt.addEventListener('click', clicar)
+
+        function clicar() {
+            var temp = window.prompt('Digite uma temperatura em °C(celsiu)') 
+            var f = (temp*1.8) + 32
+            var k = temp+273
+            p.innerHTML = (`<h2> A temperatura de ${temp}°C, corresponde a...</h2>
+            <p>${f}°f (Kelvin)</p>
+            <p>${k}°k (Fahrenheit)</p>`)
+        }
+    </script>
+</body>
+</html>
