@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        #botao{
+            width: 168px;
+            height: 75px;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média do aluno v1.0</h1>
+
+    <input type="button" value="Calcular média" id="botao">
+
+    <p id="result">O resultado vai aparecer aqui..</p>
+
+    <script>
+        var botao = document.querySelector("#botao")
+        botao.addEventListener('click', clicou)
+
+        function clicou(){
+            var nome = String(window.prompt(`Qual o nome do aluno?`))
+            var n1 = Number(window.prompt(`Qual a primeira nota de ${nome}?`))
+            var n2 = Number(window.prompt(`Além de ${n1}, qual a segunda nota de ${nome}?`))
+            var media = (n1+n2)/2
+            
+            var resultado = document.querySelector("#result")
+            resultado.innerHTML = `
+                <p>Calculando a média final de ${nome}</p>
+                <p>As notas obtidas foram <mark>${n1} e ${n2}</mark></p>
+                <p>A média final será <mark>${media}</mark></p>
+            `
+
+        }
+    </script>
+</body>
+</html>

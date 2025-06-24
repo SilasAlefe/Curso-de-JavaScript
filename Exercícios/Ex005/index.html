@@ -31,10 +31,10 @@
 
         function clicou(){
             var a = window.prompt('Digite um número:')
-            numero = number(a.value)
+            var numero = Number(a)
 
             var result = document.querySelector('#result')
-            result.innerHTML = (`O dobro de ${numero} é ${numero} e a metade é ${numero}`)
+            result.innerHTML = (`O dobro de ${numero} é ${numero*2} e a metade é ${numero/2}`)
         }
     </script>
 </body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #botao{
+            width: 180px;
+            height: 70px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+
+    <input type="button" value="Iniciar a soma" id="botao">
+
+    <p id="result" style="background-color: ;">O resultado vem aqui..</p>
+
+    <script>
+        var botao = document.querySelector('#botao')
+        botao.addEventListener('click', clicou)
+
+        function clicou(){
+            var a = Number(window.prompt('Digite um número abaixo'))
+            var b = Number(window.prompt('Digite um número abaixo'))
+
+            var resultado = document.querySelector('#result')
+            resultado.innerHTML = `A soma entre <mark>${a}</mark> e <mark>${b}</mark> é igual a <strong>${a+b}!</strong>` 
+        }
+
+
+
+    </script>
+</body>
+</html>
