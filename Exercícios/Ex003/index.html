@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #botao{
+            width: 193px;
+            height: 72px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com dados v1.0</h1>
+
+    <input type="button" value="Clique para começar" id="botao">
+
+    <script>
+        var botao = document.querySelector('#botao')
+        botao.addEventListener('click', clicou)
+
+        function clicou(){
+            nome = window.prompt('Qual o seu nome?')
+
+            window.alert(`Seja bem vindo, ${nome}.`)
+        }
+    </script>
+</body>
+</html>
