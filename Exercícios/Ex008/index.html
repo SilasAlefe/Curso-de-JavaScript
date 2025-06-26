@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #botao{
+            width: 175px;
+            height: 65px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Vários cálculos em JS</h1>
+
+    <input type="button" value="Clique para calcular" id="botao">
+    <p id="resultado">O resultado vai aparecer aqui.. </p>
+    <script>
+        var botao = document.querySelector("#botao")
+        botao.addEventListener('click', clicou)
+
+        function clicou(){
+            var n = Number(window.prompt("Digite um número abaixo!"))
+            var result = document.querySelector("#resultado")
+
+            var a = Math.abs(n)
+            var b = Math.trunc(n)
+            var c = Math.round(n)
+            var d = (n)**(1/2)
+            var e = (n)**(1/3)
+            var f = n**2
+            var g = n**3
+
+            result.innerHTML = `
+            <hr>
+            <p>O seu valor absoluto é ${a}</p>
+            <p>A sua parte inteira é ${b}</p>
+            <p>O valor inteiro mais próximo é ${c}</p>
+            <p>A sua raiz quadrada é ${d}</p>
+            <p>A sua raiz cúbica é ${e}</p>
+            <p>O valor de ${n}<sup>2</sup> é ${f}</p>
+            <p>O valor de ${n}<sup>3</sup> é ${g}</p>
+            `
+        }
+    </script>
+</body>
+</html>
