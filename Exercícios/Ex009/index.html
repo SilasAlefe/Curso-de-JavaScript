@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>    
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        .pacifico-regular {
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        h1{
+            font-family: 'pacifico';
+            font-weight: 100;
+            font-size: 1.8em;
+        }
+
+        input{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 175px;
+            height: 70px;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+
+    <input type="button" value="Clique em mim" id="contador">
+    <input type="button" value="Zerar o contador" id="zerar">
+
+    <p id="contagem">O contador está com <mark>0</mark> cliques.</p>
+
+    <script>
+        var contador = document.querySelector('#contador')
+        var zerar = document.querySelector('#zerar')
+        contador.addEventListener('click', contando)
+        zerar.addEventListener('click', zerando)
+        n = 0
+        function contando(){
+            n = n+1
+            var contagem = document.querySelector('#contagem')
+            contagem.innerHTML = `O contador está com <mark>${n}</mark> cliques.`
+        }
+
+        function zerando(){
+            n = 0
+            var contagem = document.querySelector('#contagem')
+            contagem.innerHTML = `O contador está com <mark>${n}</mark> cliques.`
+        }
+
+    </script>
+</body>
+</html>
