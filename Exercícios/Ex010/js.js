@@ -9,4 +9,16 @@ bt3.addEventListener('click', clicou3)
 bt4.addEventListener('click', clicou4)
 
 
-document.write(`testando ${bt1}`)
+function clicou1(){
+    var txt = document.querySelector('#txt')
+    txt.innerHTML = ('Clicou no primeiro botão')
+}
+function clicou2(){
+
+}
+function clicou3(){
+
+}
+function clicou4(){
+
+}
