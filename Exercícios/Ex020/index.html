@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        h1{
+            font-family: 'pacifico', Arial, Helvetica, sans-serif;
+            font-size: 2em;
+            font-weight: lighter;
+        }
+
+        #btn{
+            width: 185px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra a estação do ano</h1>
+
+    <input type="button" value="Informe o mês aqui" id="btn">
+
+    <p id="result">Clique no botão acima para informar o mês.</p>
+
+    <script>
+        var botao = document.querySelector('#btn')
+        botao.addEventListener('click', clicou)
+        var resultado = document.getElementById('result')
+
+        function clicou(){
+            var opt = window.prompt('Digite o mês por extenso (ex: Março)')
+            if (opt.toUpperCase()=='JANEIRO' || opt.toUpperCase()=='FEVEREIRO' || opt.toUpperCase()=='MARÇO'){
+                resultado.innerHTML = (`No mês de <mark>${opt}</mark>, estamos na estação <mark><strong>INVERNO</strong></mark>`)
+            } else if (opt.toUpperCase()=='ABRIL' || opt.toUpperCase()=='MAIO' || opt.toUpperCase()=='JUNHO'){
+                resultado.innerHTML = (`No mês de <mark>${opt}</mark>, estamos na estação <mark><strong>PRIMAVERA</strong></mark>`)
+            } else if (opt.toUpperCase()=='JULHO' || opt.toUpperCase()=='AGOSTO' || opt.toUpperCase()=='SETEMBRO'){
+                resultado.innerHTML = (`No mês de <mark>${opt}</mark>, estamos na estação <mark><strong>VERÃO</strong></mark>`)
+            } else if (opt.toUpperCase()=='OUTUBRO' || opt.toUpperCase()=='NOVEMBRO' || opt.toUpperCase()=='DEZEMBRO'){
+                resultado.innerHTML = (`No mês de <mark>${opt}</mark>, estamos na estação <mark><strong>OUTONO</strong></mark>`)
+            } else {
+                opt = 'VAZIO!'
+                resultado.innerHTML = (`No mês de <strong><mark>${opt}</mark></strong>, estamos na estação <mark><strong>INDEFINIDA</strong></mark>`)
+            }
+        }
+    </script>
+</body>
+</html>

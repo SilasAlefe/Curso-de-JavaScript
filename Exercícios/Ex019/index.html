@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        h1{
+            font-family: 'pacifico', Arial, Helvetica, sans-serif;
+            font-size: 2em;
+            font-weight: lighter;
+        }
+
+        #btn{
+            width: 185px;
+            height: 80px;
+        }
+
+        h2{
+            font-family: "pacifico", Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Múltiplas ações</h1>
+
+    <input type="button" value="Clique para iniciar" id="btn">
+
+    <h2 id="calc"></h2>
+    <p id="result">Clique no botão acima para começar.</p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener('click', clicou)
+
+        var resultado = document.querySelector("#result")
+        var calculo = document.getElementById('calc')
+
+        function clicou() {
+            var n1 = Number(window.prompt('Primeiro valor:'))
+            var n2 = Number(window.prompt('Segundo valor:'))
+            var opt = Number(window.prompt(`
+Valores informados: ${n1} e ${n2}
+O que vamos fazer?
+[1] Somar
+[2] Subtrair
+[3] Multiplicar
+[4] Dividir
+            `))
+            if (opt==1){
+                var soma = n1+n2
+                calculo.innerHTML = (`Calculando...`)
+                resultado.innerHTML = (`${n1} + ${n2} = <strong>${soma}</strong>`) 
+            } else if (opt==2){
+                var subtracao = n1-n2
+                calculo.innerHTML = (`Calculando...`)
+                resultado.innerHTML = (`${n1} - ${n2} = <strong>${subtracao}</strong>`) 
+            } else if (opt==3){
+                var multiplicacao = n1*n2
+                calculo.innerHTML = (`Calculando...`)
+                resultado.innerHTML = (`${n1} x ${n2} = <strong>${multiplicacao}</strong>`) 
+            } else if (opt==4){
+                var divisao = n1/n2
+                calculo.innerHTML = (`Calculando...`)
+                resultado.innerHTML = (`${n1} / ${n2} = <strong>${divisao}</strong>`) 
+            } else{
+                calculo.innerHTML = (`Calculando...`)
+                resultado.innerHTML = (`OPÇÃO INVÁLIDA! Você digitou ${n1} e ${n2}, mas não sei o que fazer com eles`) 
+            }
+        }
+    </script>
+</body>
+</html>
