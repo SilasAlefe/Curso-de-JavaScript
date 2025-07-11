@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: rgba(0, 0, 255, 0.377);
+        }
+
+        h1{
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+
+        main{
+            background-color: white;
+            margin: auto;
+            padding: 10px;
+            width: 600px;
+            border-radius: 12px;
+            box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.363);
+        }
+
+        .itens{
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        #btn{
+            margin-left: 15px;
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vamos contar</h1>
+
+    <main>
+        <p class="itens">
+            Início: <input type="number" name="inicio" id="iinicio">
+        </p>
+        <p class="itens"> 
+            Fim: <input type="number" name="fim" id="ifim">
+        </p>
+        <p class="itens">
+            Passo: <input type="number" name="passo" id="ipasso">
+        </p>
+
+        <input type="button" value="Contar" id="btn">
+
+        <p class="itens" id="result">Preparando a contagem...</p>
+    </main>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener('click', clicou)
+
+        function clicou(){
+            var n1 = Number(document.querySelector('#iinicio').value)
+            var n2 = Number(document.querySelector('#ifim').value)
+            var n3 = Number(document.querySelector('#ipasso').value)
+
+            var resultado = document.querySelector('#result')
+            resultado.innerHTML = (`<p>Contando:</p>`)
+            if (n2>n1 && n3>0){
+                for ( n1 ; n1<=n2 ; n1+=n3){
+                    resultado.innerHTML += (`${n1} &#x1F449`)
+                    if (n1==n2) {
+                        resultado.innerHTML += (`&#x1F6A9`)
+                    }
+                }
+            } else if (n1>n2 && n3<0){
+                for ( n1 ; n1>=n2 ; n1+=n3){
+                    resultado.innerHTML += (`${n1} &#x1F449`)
+                    if (n1==n2) {
+                        resultado.innerHTML += (`&#x1F6A9`)
+                    }
+                }
+            } else {
+                resultado.innerHTML = (`<p>IMPOSSÍVEL CONTAR!!</p>`)
+            }
+        }
+    </script>
+</body>
+</html>
