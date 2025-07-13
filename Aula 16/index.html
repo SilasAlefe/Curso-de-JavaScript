@@ -4,8 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: rgba(0, 0, 255, 0.541);
+        }
+
+        header > h1 {
+            text-align: center;
+            color: white;
+            padding: 25px;
+        }
+
+        main{
+            background-color: white;
+            margin: 0px 20%;
+            padding: 15px;
+
+            border-radius: 10px;
+        }
+
+        #entrada{
+            margin: 15px 0px;
+        }
+
+        #botao{
+            padding: 1px 4px;
+        }
+
+        #isaida{
+            max-width: 100%;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <main>
+        <p id="entrada">
+            Número: <input type="number" name="entrada" id="ientrada">
+            <input type="submit" value="Gerar tabuada" id="botao" >
+        </p>
+
+        <p>
+            <select name="saida" id="isaida" size="10">
+                <option id="result">Digite um número acima</option>
+            </select>
+        </p>
+    </main>
+
+    <script>
+        var botao = document.querySelector('#botao')
+        botao.addEventListener('click', clicou)
+
+        function clicou() {
+            var entrada = Number(document.querySelector('#ientrada').value)
+            var resultado = document.querySelector('#isaida')
+            resultado.innerHTML = (``)
+
+            if (entrada != 0) {
+                for ( var n = 1 ; n <= 10 ; n++ ) {
+                    resultado.innerHTML += (`<option>${entrada} x ${n} = ${entrada*n}</option>`)
+                }
+            } else {
+                resultado.innerHTML += (`<option>DIGITE UM VALOR PARA CONTINUAR</option>`)
+            }
+        }
+    </script>
 </body>
 </html>
