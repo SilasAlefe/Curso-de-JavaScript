@@ -43,6 +43,10 @@
             min-width: 20%;
         }
 
+        .res{
+            padding: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -101,28 +105,34 @@
         }
 
         function finalizou() {
-            var resultado = document.querySelector('#result')
+            if (num.length == 0) {
+                window.alert('Adicione um valor antes de finalizar')
+            } else {
+                var resultado = document.querySelector('#result')
 
-            resultado.innerHTML += (`Ao todo temos ${num.length} números cadastrados`)
 
-            var MAV = 0
-            var MEV = 0
-            for ( var pos = 0 ; pos <= num.length ; pos++ ) {
-                if (num[pos] > MAV) {
-                    var MAV = num[pos]
-                }
-                for ( var pos1 = pos+1 ; pos1 <= num.length ; pos1++ ) {
-                    if (num[pos] < num[pos1]) {
-                        var MEV = num[pos]
+                var MAV = 0
+                var MEV = 0
+                var SOMA = 0
+                for ( var pos = 0 ; pos <= num.length ; pos++ ) {
+                    if (num[pos] > MAV) {
+                        var MAV = num[pos]
+                    }
+                    for ( var pos1 = pos+1 ; pos1 <= num.length ; pos1++ ) {
+                        if (num[pos] < num[pos1]) {
+                            var MEV = num[pos]
+                        }
+                    }
+                    if (pos < num.length) {
+                        var SOMA = SOMA + num[pos]
                     }
                 }
-                var soma += num[pos]
+                resultado.innerHTML += (`<p class='res'> Ao todo temos ${num.length} números cadastrados</p>`)
+                resultado.innerHTML += (`<p class='res'>O maior valor informado foi ${MAV}</p>`)
+                resultado.innerHTML += (`<p class='res'>O menor valor informado foi ${MEV}</p>`)
+                resultado.innerHTML += (`<p class='res'>Somando todos os valores temos ${SOMA}</p>`)
+                resultado.innerHTML += (`<p class='res'>A média dos valores digitados é ${SOMA/(num.length)}</p>`)
             }
-            resultado.innerHTML = (`<p>O maior valor informado foi ${MAV}</p>`)
-            resultado.innerHTML = (`<p>O menor valor informado foi ${MEV}</p>`)
-            resultado.innerHTML = (`<p>Somando todos os valores temos ${SOMA}</p>`)
-            resultado.innerHTML = (`<p>A média dos valores digitados é ${soma/num.length}</p>`)
-
         }
 
     </script>
